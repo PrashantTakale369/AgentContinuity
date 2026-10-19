@@ -1,0 +1,31 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and local environments
+node_modules/
+.venv/
+
+# Generated files
+__pycache__/
+*.py[cod]
+*.log
+
+# AgentContinuity private evidence and Python packaging
+.agentcontinuity/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+
+# Operating system files
+.DS_Store
+
+/repo_img
+.mine_idea.md
+.AgentRelay_Cross_Agent_Context_Continuity_Research.docx
+
+
+/tests
