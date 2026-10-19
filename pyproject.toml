@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentcontinuity"
+version = "0.1.0"
+description = "Local, evidence-backed context continuity between coding agents"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "License not yet specified"}
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["setuptools>=68", "wheel"]
+
+[project.scripts]
+agentcontinuity = "agentcontinuity.cli:main"
+agenthandoff = "agentcontinuity.cli.app:handoff_main"
+
+[tool.setuptools]
+# Keep the existing source layout while installing it as agentcontinuity.
+package-dir = {agentcontinuity = "src"}
+packages = [
+    "agentcontinuity",
+    "agentcontinuity.agents",
+    "agentcontinuity.cli",
+    "agentcontinuity.context",
+    "agentcontinuity.core",
+    "agentcontinuity.integrations",
+    "agentcontinuity.services",
+    "agentcontinuity.storage",
+    "agentcontinuity.workspace",
+]
+
+[tool.setuptools.package-data]
+agentcontinuity = ["integrations/agenthandoff/SKILL.md"]
