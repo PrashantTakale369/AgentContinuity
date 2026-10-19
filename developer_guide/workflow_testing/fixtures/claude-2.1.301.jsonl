@@ -1,0 +1,15 @@
+{"type":"mode","sessionId":"installed-shape","mode":"default"}
+{"type":"user","sessionId":"installed-shape","cwd":"${WORKSPACE}","version":"2.1.301","isSidechain":false,"userType":"external","message":{"role":"user","content":"Fix the expiry bug"}}
+{"type":"attachment","sessionId":"installed-shape","cwd":"${WORKSPACE}","attachment":{"type":"instructions","filename":"CLAUDE.md","content":"Use the existing test harness"}}
+{"type":"atis-latch","sessionId":"installed-shape","atis":{}}
+{"type":"api-request-shape","sessionId":"installed-shape","shape":{},"shapeHash":"synthetic-shape"}
+{"type":"api-request-blob","sessionId":"installed-shape","hash":"synthetic-hash","message":{"role":"user","content":"Synthetic cached request"}}
+{"type":"api-request","sessionId":"installed-shape","base":null,"keep":0,"params":{},"tail":[],"requestDigest":"synthetic-digest"}
+{"type":"ai-title","sessionId":"installed-shape","aiTitle":"Expiry fix"}
+{"type":"file-history-delta","messageId":"synthetic-msg","trackingPath":"auth.py","backup":{}}
+{"type":"permission-mode","sessionId":"installed-shape","permissionMode":"default"}
+{"type":"cost-state","sessionId":"installed-shape","totalCostUSD":0,"modelUsage":{}}
+{"type":"user","sessionId":"installed-shape","cwd":"${WORKSPACE}","isMeta":true,"message":{"role":"user","content":"Synthetic harness reminder"}}
+{"type":"assistant","sessionId":"installed-shape","cwd":"${WORKSPACE}","message":{"role":"assistant","content":[{"type":"thinking","thinking":"Synthetic accessible thinking placeholder"},{"type":"tool_use","id":"tool-1","name":"Bash","input":{"command":"python3 -m unittest"}}]}}
+{"type":"user","sessionId":"installed-shape","cwd":"${WORKSPACE}","message":{"role":"user","content":[{"type":"tool_result","tool_use_id":"tool-1","content":"FAILED: expiry regression","is_error":true}]},"toolUseResult":{"stdout":"FAILED: expiry regression","stderr":"","interrupted":false}}
+{"type":"assistant","sessionId":"installed-shape","cwd":"${WORKSPACE}","message":{"role":"assistant","content":[{"type":"text","text":"Investigate the timezone conversion next."}]}}
