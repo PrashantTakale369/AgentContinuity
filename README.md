@@ -137,7 +137,7 @@ If a session is missing, run `agenthandoff doctor` and check the session roots.
 Only conversations accessible to the current user can be listed. Session
 activity timestamps do not prove that an agent is currently running.
 
-<img width="1852" height="1076" alt="image" src="https://github.com/user-attachments/assets/b468c052-2628-4b2b-87fb-acf276ffb979" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/044379f7-f03c-41e1-a4b2-d93185b9b832" />
 
 
 # 5. Benchmark results
