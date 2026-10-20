@@ -2,11 +2,50 @@
   <img src="assets/logo.png" alt="AgentContinuity logo" width="900">
 </p>
 
-# AgentContinuity
+<h1 align="center">
+  Continue your coding work when you switch Coding agents.
+</h1>
 
-Continue your coding work when you switch agents.
+<br>
 
-## What we are trying to do
+<p align="center">
+  <a href="#1-overview">Overview</a> •
+  <a href="#2-get-started">Installation</a> •
+  <a href="#3-how-you-use-it">How It Works</a> •
+  <a href="#4-what-gets-carried-over">Features</a> •
+  <a href="#5-benchmark-results">Benchmarks</a> •
+  <a href="developer_guide/Readme.md">Developer Guide</a> •
+  <a href="#contributing">Contributing</a>
+</p>
+
+<p align="center">
+  <a href="#2-get-started">
+    <img src="https://img.shields.io/badge/Python-3.11%2B-3776AB?logo=python&logoColor=white" alt="Python 3.11+">
+  </a>
+  <a href="#3-how-you-use-it">
+    <img src="https://img.shields.io/badge/Codex-Supported-22C55E" alt="Codex Supported">
+  </a>
+  <a href="#3-how-you-use-it">
+    <img src="https://img.shields.io/badge/Claude_Code-Supported-22C55E" alt="Claude Code Supported">
+  </a>
+</p>
+
+<p align="center">
+  <a href="#2-get-started">
+    <img src="https://img.shields.io/badge/Platforms-Linux%20%7C%20macOS%20%7C%20WSL-2563EB" alt="Supported Platforms">
+  </a>
+  <a href="#5-benchmark-results">
+    <img src="https://img.shields.io/badge/Benchmark-144%20Cases-16A34A" alt="144 Benchmark Cases">
+  </a>
+  <a href="#4-what-gets-carried-over">
+    <img src="https://img.shields.io/badge/Context-Local%20First-8B5CF6" alt="Local First">
+  </a>
+</p>
+
+<br>
+
+
+# 1. Overview 
 
 When you move from one coding agent to another, you often have to explain your
 task again. The new agent needs to know what you asked for, what changed, what
@@ -21,7 +60,7 @@ You open Claude and type `/agenthandoff`. You can find that Codex session even
 if Claude is open in a different directory. Select it to prepare the context
 for continuing the work.
 
-## Get started
+# 2. Get started
 
 You need Python 3.11 or later, Git, and an installed agent that you have signed
 into. This version supports Linux, macOS, and Windows through WSL.
@@ -45,7 +84,7 @@ you want to use it.
 | Claude Code | `/agenthandoff` |
 | Codex CLI or IDE extension | `$agenthandoff`, or choose it through `/skills` |
 
-## How you use it
+# 3. How you use it
 
 1. Open the agent you want to continue with and invoke its handoff skill.
 2. Look through the numbered sessions, including sessions from other projects.
@@ -70,7 +109,7 @@ Use the listing ID printed with the session list. It keeps your selected number
 tied to the conversation you actually saw. Use `agenthandoff sessions --all`
 to show every accessible session.
 
-## What gets carried over
+# 4. What gets carried over
 
 The handoff includes the task objective, user requirements, relevant conversation
 excerpts, project state, and available verification results. An assistant saying
@@ -98,7 +137,7 @@ If a session is missing, run `agenthandoff doctor` and check the session roots.
 Only conversations accessible to the current user can be listed. Session
 activity timestamps do not prove that an agent is currently running.
 
-## Benchmark results
+# 5. Benchmark results
 
 The synthetic suite covers eight scenarios in both directions: Codex to Claude
 and Claude to Codex. Each scenario uses histories with 12, 40, and 80 unrelated
@@ -132,7 +171,7 @@ The [developer guide](developer_guide/Readme.md#benchmark-cases) explains how to
 reproduce the measurements, generate per case results and source file hashes,
 and interpret the results.
 
-## Folder structure
+# 6. Folder structure
 
 ```text
 AgentContinuity/
@@ -191,16 +230,4 @@ python3 -B -m venv .venv
 Run workflow tests before editing. After your changes, run them again and finish
 with local validation. Open a pull request once all checks pass.
 
-## Current scope
-
-This version works with accessible native JSONL conversations on the same
-machine and with original Git projects that still exist. Hidden reasoning,
-database only sessions, and sharing between separate machines are outside the
-current scope. Available history and context limits can affect what a handoff
-contains.
-
-AgentHandoff prepares a continuation from available evidence. It does not move
-the source agent's internal state or guarantee that the receiving agent will
-complete the task correctly.
-
-The project is still being developed. See [LICENSE](LICENSE) for its license.
+See [LICENSE](LICENSE) for its license.
