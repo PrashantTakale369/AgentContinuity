@@ -88,7 +88,7 @@ The [agent extension tests](workflow_testing/test_agents.py) demonstrate how a
 new module is discovered, captures a session, prepares a handoff, and launches
 its executable. Add synthetic tests for your agent's actual format.
 
-## 4. Run final CI validation
+## 4. Run final local validation
 
 When the workflow tests pass, run:
 
@@ -110,7 +110,8 @@ nonzero exit code. It runs these checks in order:
 | Workflow tests | The full suite passes against the installed wheel, including standalone ZIP installation |
 | Synthetic benchmark | All eight scenarios run in both directions at three byte limits, including safe refusal and evidence retrieval |
 
-CI reads the discovered test count, so new tests are included automatically.
+The validator reads the discovered test count, so new tests are included
+automatically.
 It also runs 48 synthetic benchmark cases: eight scenarios in both directions
 at each of three context limits. Benchmark timings are reported for review;
 machine speed is not a pass condition.
@@ -123,14 +124,13 @@ To save a report outside the checkout:
 
 Builds and installation checks use temporary directories. After development
 tools are installed, validation itself needs no network access. Your real
-agent setup and conversations are not used by these checks. The optional logo
-under `repo_img/` is local artwork and is not required in a clean clone.
+agent setup and conversations are not used by these checks. The public logo is
+tracked at [assets/logo.png](../assets/logo.png). Other artwork under `repo_img/`
+stays local and is not required in a clean clone.
 
-The [GitHub Actions workflow](../.github/workflows/ci.yml) runs this same command
-for pull requests, pushes to `main` or `master`, and manual runs. Its matrix
-covers Python 3.11 through 3.14 on Linux and Python 3.12 on macOS. These jobs
-start when the workflow is pushed to GitHub; a local pass only verifies the
-environment where it was run.
+Run this command locally before opening a pull request. The repository does not
+include GitHub Actions workflows. A passing run verifies the environment where
+the command was run.
 
 ## 5. Open a pull request
 
@@ -140,8 +140,8 @@ Explain the problem, the resulting behavior, and the validation you ran. The
 [pull request template](../.github/pull_request_template.md) provides that shape.
 
 Keep private artwork, generated build output, local session data, and virtual
-environments out of the commit. If GitHub CI fails, fix the failure and rerun
-validation before asking for review.
+environments out of the commit. Fix local validation failures before asking for
+review.
 
 ## Benchmark cases
 
@@ -161,9 +161,10 @@ temporary project. No model requests or real user conversations are involved.
 
 The [README table](../README.md#benchmark-results) summarizes correctness checks,
 complete clue retention in built packets, and safe refusals at each byte limit.
-The [raw results](workflow_testing/benchmark_results.json) include per case
+The runner generates `workflow_testing/benchmark_results.json` with per case
 checks, source and target agents, required and retained clues, byte counts,
-compile times, source hashes, and environment details.
+compile times, source hashes, and environment details. This generated report is
+not included in the repository.
 
 Correctness checks and inline clue retention answer different questions. A
 packet must preserve requirements and stay within its byte limit. Evidence

@@ -1,4 +1,4 @@
-"""Run the same offline validation locally and in GitHub Actions."""
+"""Run final offline validation for a local checkout."""
 
 import argparse
 import ast
