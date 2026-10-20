@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="repo_img/image.png" alt="AgentContinuity logo" width="900">
+  <img src="assets/logo.png" alt="AgentContinuity logo" width="900">
 </p>
 
 # AgentContinuity
@@ -128,15 +128,16 @@ under the same byte limits. The small benchmark measures local context
 preparation and evidence retention. It does not measure coding quality, model
 response time, task completion, or full handoff time. Timings vary by machine.
 
-The [complete results](developer_guide/workflow_testing/benchmark_results.json)
-include every case and source file hashes. The
-[developer guide](developer_guide/Readme.md#benchmark-cases) explains how to
-reproduce the measurements and interpret the results.
+The [developer guide](developer_guide/Readme.md#benchmark-cases) explains how to
+reproduce the measurements, generate per case results and source file hashes,
+and interpret the results.
 
 ## Folder structure
 
 ```text
 AgentContinuity/
+├── assets/
+│   └── logo.png                 Public logo displayed in this README
 ├── src/                         Application, installed as agentcontinuity
 │   ├── agents/                  Agent definitions and shared discovery
 │   ├── cli/                     Terminal commands and argument parsing
@@ -152,10 +153,10 @@ AgentContinuity/
 │   ├── Readme.md                Contribution steps and benchmark methodology
 │   ├── workflow_testing/        Tests, synthetic fixtures, and recorded results
 │   └── ci_validation/
-│       └── checks.py            Final local and CI validation command
+│       └── checks.py            Final local validation command
 ├── scripts/
 │   └── build_release.py         Build the downloadable release ZIP
-├── .github/                     GitHub Actions and pull request template
+├── .github/                     Pull request template
 ├── agenthandoff                 Run the CLI directly from a checkout
 ├── install.py                   Install the standalone application
 ├── pyproject.toml               Python packaging and development tools
@@ -188,8 +189,7 @@ python3 -B -m venv .venv
 ```
 
 Run workflow tests before editing. After your changes, run them again and finish
-with CI validation. Open a pull request once all checks pass. GitHub Actions runs
-the same validation for pull requests.
+with local validation. Open a pull request once all checks pass.
 
 ## Current scope
 
