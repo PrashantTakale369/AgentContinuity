@@ -137,6 +137,9 @@ If a session is missing, run `agenthandoff doctor` and check the session roots.
 Only conversations accessible to the current user can be listed. Session
 activity timestamps do not prove that an agent is currently running.
 
+<img width="1852" height="1076" alt="image" src="https://github.com/user-attachments/assets/b468c052-2628-4b2b-87fb-acf276ffb979" />
+
+
 # 5. Benchmark results
 
 The synthetic suite covers eight scenarios in both directions: Codex to Claude
