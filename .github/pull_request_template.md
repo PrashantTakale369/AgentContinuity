@@ -16,5 +16,5 @@ Include the result of both commands:
 ```
 
 Mention the tests added or updated. Include benchmark results if evidence
-selection or context budgets changed. Keep real conversations and local logos
+selection or context budgets changed. Keep real conversations and private artwork
 out of the PR.
